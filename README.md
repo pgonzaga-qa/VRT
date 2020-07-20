@@ -1,2 +1,4 @@
-# curso-backstopjs-tat
-Projeto para o curso de BackstopJS da Escola TAT
+# Backstop.JS
+
+Executar Test -> npx backstop test
+Aprovar Test -> npx backstop approve
