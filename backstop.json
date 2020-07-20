@@ -1,0 +1,81 @@
+{
+  "id": "Obramax - Visual Test - Homolog",
+  "viewports": [
+    {
+      "label": "Desktop",
+      "width": 1680,
+      "height": 1050
+    },
+    {
+      "label": "Mobile",
+      "width": 414,
+      "height": 736
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [ 
+    {
+      "label": "Home",
+      "url": "https://homolog.obramax.com.br/",
+      "readySelector": "#znv-chat-auto-0",
+      "delay": 5000,
+      "hideSelectors": ["#banner", "#znv-chat-auto-0", ".counter-label"],
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Login",
+      "url": "https://homolog.obramax.com.br/customer/account/login/",
+      "readySelector": "#znv-chat-auto-0",
+      "delay": 5000,
+      "hideSelectors": ["#znv-chat-auto-0", ".counter-label"],
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Login - Pagina do Usuario",
+      "onReadyScript": "puppet/custom/login.js",
+      "url": "https://homolog.obramax.com.br/customer/account/login/",
+      "delay": 5000,
+      "hideSelectors": ["#znv-chat-auto-0", ".counter-label"],
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Fale Conosco",
+      "url": "https://homolog.obramax.com.br/fale-conosco",
+      "readySelector": "#znv-chat-auto-0", 
+      "delay": 5000,
+      "hideSelectors": ["#znv-chat-auto-0", ".counter-label"],
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Fale Conosco Form",
+      "onReadyScript": "puppet/custom/faleConosco.js",
+      "url": "https://homolog.obramax.com.br/fale-conosco",
+      "readySelector": "#znv-chat-auto-0", 
+      "delay": 5000,
+      "hideSelectors": ["#znv-chat-auto-0", ".counter-label"],
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
